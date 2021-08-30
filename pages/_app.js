@@ -1,10 +1,13 @@
 import 'tailwindcss/tailwind.css';
+import { TodosProvider } from '../context/TodosContext';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <div className="container mx-auto my-10 mx-w-xl">
-      <Component {...pageProps} />
-    </div>
+    <TodosProvider>
+      <div className="container mx-auto my-10 mx-w-xl">
+        <Component {...pageProps} />
+      </div>
+    </TodosProvider>
   );
 }
 
