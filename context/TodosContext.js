@@ -21,7 +21,7 @@ const TodosProvider = ({ children }) => {
             const res = await fetch('/api/createTodo', {
                 method: 'POST',
                 body: JSON.stringify({ description }),
-                header: { 'Content-Type': 'application/json' }
+                headers: { 'Content-Type': 'application/json' }
             });
             const newTodo = await res.json();
             setTodos(prevTodos => {
