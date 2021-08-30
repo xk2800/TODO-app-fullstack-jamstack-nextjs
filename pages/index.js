@@ -1,11 +1,16 @@
 import Head from 'next/head';
+import { useSession } from "next-auth/client";
 import { useEffect, useContext } from 'react';
 import Navbar from '../components/Navbar';
 import Todo from '../components/Todo';
+import TodoForm from '../components/TodoForm';
 import { TodosContext } from '../context/TodosContext';
 import { table, getMinifiedRecord } from './api/utils/AirTable';
 
 export default function Home({ initialTodos }) {
+
+    const [session] = useSession();
+    {console.log(session)}
 
     const { todos, setTodos } = useContext(TodosContext);
 
@@ -23,14 +28,26 @@ export default function Home({ initialTodos }) {
 
             <Navbar />
             <main>
-                <h1>Todo App</h1>
-                <ul>
-                    {todos &&
-                    todos.map(todo =>
-                            <Todo key={todo.id} todo={todo} />
-                    )
-                    }
-                </ul>
+                {!session && (
+                    <>
+                        <h1>Login to see items</h1>
+                    </>
+                )}
+                {session && (
+                    <>
+                        <h1 className='text-2xl text-center mb-4'>My Todo List</h1>
+                        <TodoForm />
+
+                        <ul>
+                            {todos &&
+                                todos.map(todo =>
+                                    <Todo key={todo.id} todo={todo} />
+                                )
+                            }
+                        </ul>
+                    </>
+                )}
+
             </main>
         </div>
     );
