@@ -10,7 +10,9 @@ export default NextAuth({
             clientSecret: process.env.GOOGLE_SECRET,
         }),
     ],
-
+    pages: {
+        signIn: "/signin",
+    },
     // A database is optional, but required to persist accounts in a database
     //database: process.env.DATABASE_URL,
 });
