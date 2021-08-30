@@ -1,5 +1,8 @@
 import React, { useContext } from 'react';
 import { TodosContext } from '../context/TodosContext.js';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function Todo({ todo }) {
     const { updateTodo, deleteTodo } = useContext(TodosContext);
@@ -10,6 +13,16 @@ export default function Todo({ todo }) {
         };
         const updatedTodo = { id: todo.id, fields: updatedFields };
         updateTodo(updatedTodo);
+        toast.success('Yay! Todo Successfully Updated', {
+            position: "top-center",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+
     };
 
     return (
@@ -35,6 +48,7 @@ export default function Todo({ todo }) {
             >
                 Delete
             </button>
+            <ToastContainer />
         </li>
     );
 }
