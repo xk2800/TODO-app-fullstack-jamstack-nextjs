@@ -3,7 +3,6 @@ import { TodosContext } from '../context/TodosContext.js';
 
 export default function Todo({ todo }) {
     const { updateTodo, deleteTodo } = useContext(TodosContext);
-    
     const handleToggleCompleted = async () => {
         const updatedFields = {
             ...todo.fields,
