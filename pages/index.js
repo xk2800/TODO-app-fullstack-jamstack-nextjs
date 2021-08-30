@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { useSession } from "next-auth/client";
+import { getSession, useSession } from "next-auth/client";
 import { useEffect, useContext } from 'react';
 import Navbar from '../components/Navbar';
 import Todo from '../components/Todo';
@@ -10,7 +10,8 @@ import { table, getMinifiedRecord } from './api/utils/AirTable';
 export default function Home({ initialTodos }) {
 
     const [session] = useSession();
-    {console.log(session)}
+    { console.log(session); }
+    //{ console.log(user); }
 
     const { todos, setTodos } = useContext(TodosContext);
 
@@ -54,11 +55,20 @@ export default function Home({ initialTodos }) {
 }
 
 export async function getServerSideProps(context) {
+
+    const session = await getSession(context);
+    let todos = [];
+
+
     try {
-        const todos = await table.select({}).firstPage();
+        if (session?.user) {
+            todos = await table.select({
+                filterByFormula: `userId = '${session?.user?.email}'`
+            }).firstPage();
+        }
         return {
             props: {
-                initialTodos: getMinifiedRecord(todos)
+                initialTodos: getMinifiedRecord(todos),
             }
         };
     } catch (err) {
