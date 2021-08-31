@@ -18,7 +18,6 @@ export default function Navbar() {
 
                 {session && (
                     <>
-                        Signed in as {session.user.email} <br />
                         {/* {console.log(session)} */}
                         <button onClick={() => signOut()} className="rounded-[10px] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:text-black text-white py-2 px-4">Sign out</button>
                     </>
