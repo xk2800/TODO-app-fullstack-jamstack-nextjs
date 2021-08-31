@@ -42,7 +42,7 @@ export default function TodoForm() {
                     required
                     value={todo}
                     onChange={(e) => setTodo(e.target.value)}
-                    placeholder="Learn About Logging In"
+                    placeholder="Need To Wash Car"
                     className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-[color:var(--brown)] font-secondary"
                 />
             </div>
