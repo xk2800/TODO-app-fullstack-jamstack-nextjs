@@ -1,6 +1,7 @@
 import { useContext, useState } from 'react';
 import { TodosContext } from '../context/TodosContext.js';
 import { ToastContainer, toast } from 'react-toastify';
+import Spinner from './Spinner/index';
 
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -45,7 +46,7 @@ export default function Todo({ todo }) {
                         className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
                     />
                     <span
-                        className={`flex-1 text-gray-800  ${todo.fields.completed ? 'line-through' : ''
+                        className={`flex-1 text-gray-800 px-[10px] rounded-[10px]  ${todo.fields.completed ? 'line-through' : ''
                             }`}
                     >
                         {todo.fields.description}
@@ -61,29 +62,33 @@ export default function Todo({ todo }) {
             }
 
             {loading &&
-                <li className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px]">
-                    <input
-                        name="completed"
-                        type="checkbox"
-                        checked={todo.fields.completed}
-                        onChange={handleToggleCompleted}
-                        className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
-                        disabled
-                    />
-                    <span
-                        className={`flex-1 text-gray-800 ${todo.fields.completed ? 'line-through' : ''
-                            }`}
-                    >
-                        {todo.fields.description}
-                    </span>
-                    <button
-                        type="button"
-                        className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
-                        onClick={() => deleteTodo(todo.id)}
-                    >
-                        Delete
-                    </button>
-                </li>
+                <>
+                    {/* <span>Loading</span> */}
+                    <Spinner />
+                    <li className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px]">
+                        <input
+                            name="completed"
+                            type="checkbox"
+                            checked={todo.fields.completed}
+                            onChange={handleToggleCompleted}
+                            className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
+                            disabled
+                        />
+                        <span
+                            className={`flex-1 text-gray-800 ${todo.fields.completed ? 'line-through' : ''
+                                }`}
+                        >
+                            {todo.fields.description}
+                        </span>
+                        <button
+                            type="button"
+                            className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
+                            onClick={() => deleteTodo(todo.id)}
+                        >
+                            Delete
+                        </button>
+                    </li>
+                </>
             }
             <ToastContainer />
         </>
