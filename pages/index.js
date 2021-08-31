@@ -27,8 +27,7 @@ export default function Home({ initialTodos }) {
                 <title>Todo App</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
-
-            <Navbar className="dark:bg-black"/>
+            <Navbar className="dark:bg-black" />
             <main className="dark:bg-black">
                 {!session && (
                     <>
