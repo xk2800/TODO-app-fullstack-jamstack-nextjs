@@ -11,3 +11,7 @@
     --brown: #A89C94FF;
     --darkbrown: rgb(92, 86, 82);
 }
+
+*{
+    background-color: #F9FAFB;
+}

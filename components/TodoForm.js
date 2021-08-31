@@ -46,8 +46,8 @@ export default function TodoForm() {
                     className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-red-400"
                 />
             </div>
-            {!isPending && <button type="submit" className="w-full rounded bg-blue-500 text-white hover:bg-blue-700 py-2 px-4">Submit</button>}
-            {isPending && <button disabled type="submit" className="w-full rounded bg-blue-200 text-white hover:bg-blue-700 py-2 px-4">Submitting</button>}
+            {!isPending && <button type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black text-white py-2 px-4">Submit</button>}
+            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black text-white py-2 px-4">Submitting</button>}
             <ToastContainer />
         </form>
     );

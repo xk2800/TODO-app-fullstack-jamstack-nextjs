@@ -12,7 +12,7 @@ export default function Navbar() {
                 {!session && (
                     <>
                         {/* Not signed in <br /> */}
-                        <button onClick={() => signIn()} className="rounded-[10px] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] text-white py-2 px-4">Sign in</button>
+                        <button onClick={() => signIn()} className="rounded-[10px] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:text-black text-white py-2 px-4">Sign in</button>
                     </>
                 )}
 
@@ -20,7 +20,7 @@ export default function Navbar() {
                     <>
                         Signed in as {session.user.email} <br />
                         {/* {console.log(session)} */}
-                        <button onClick={() => signOut()} className="rounded-[10px] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] text-white py-2 px-4">Sign out</button>
+                        <button onClick={() => signOut()} className="rounded-[10px] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:text-black text-white py-2 px-4">Sign out</button>
                     </>
                 )}
             </div>
