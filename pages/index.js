@@ -22,14 +22,14 @@ export default function Home({ initialTodos }) {
 
     console.log(initialTodos);
     return (
-        <div>
+        <div className="dark:bg-black">
             <Head>
                 <title>Todo App</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <Navbar />
-            <main>
+            <Navbar className="dark:bg-black"/>
+            <main className="dark:bg-black">
                 {!session && (
                     <>
                         <h1 className="text-2xl"><button onClick={() => signIn()} className="underline">Login</button> to see your Todos</h1>

@@ -1,9 +1,12 @@
 import { signIn, signOut, useSession } from "next-auth/client";
+//import useDarkMode from "../useDarkMode";
 
 export default function Navbar() {
     const [session, loading] = useSession();
+    //const [colorTheme, setTheme] = useDarkMode();
+
     return (
-        <nav className="flex justify-between items-center py-4">
+        <nav className="flex justify-between items-center py-4 dark:bg-black">
             <p className="text-2xl font-bold text-[color:var(--darkbrown)]">My Todos</p>
             <div className="flex">
                 {/* <Link href='/api/logout'>
