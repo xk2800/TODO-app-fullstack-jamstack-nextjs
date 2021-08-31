@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import { getSession, useSession } from "next-auth/client";
+import Link from 'next/link';
+import { getSession, useSession, signIn } from "next-auth/client";
 import { useEffect, useContext } from 'react';
 import Navbar from '../components/Navbar';
 import Todo from '../components/Todo';
@@ -31,7 +32,7 @@ export default function Home({ initialTodos }) {
             <main>
                 {!session && (
                     <>
-                        <h1>Login to see items</h1>
+                        <h1 className="text-2xl"><button onClick={() => signIn()} className="underline">Login</button> to see your Todos</h1>
                     </>
                 )}
                 {session && (
