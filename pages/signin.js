@@ -4,10 +4,10 @@ import { providers, signIn, getSession, csrfToken } from "next-auth/client";
 export default function SignIn({ providers, csrfToken }) {
     return (
         <>
-            <div className="text-3xl font-main text-[color:var(--darkbrown)] mb-[10px]">
+            <div className="text-3xl font-main text-[color:var(--darkbrown)] mb-[20px] text-center">
                 Login to continue
             </div>
-            <div className="text-xl font-secondary pl-[30px] ">
+            <div className="text-xl font-secondary text-center">
                 {/* <button className="border-[2px] border-black px-[10px]"> */}
                     {Object.values(providers).map((provider) => {
                         if (provider.name === "Email") {

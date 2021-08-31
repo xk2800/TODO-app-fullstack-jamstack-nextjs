@@ -32,7 +32,7 @@ export default function Todo({ todo }) {
                 type="checkbox"
                 checked={todo.fields.completed}
                 onChange={handleToggleCompleted}
-                className="mr-2 form-checkbox h-5 w-5"
+                className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
             />
             <span
                 className={`flex-1 text-gray-800  ${
@@ -43,7 +43,7 @@ export default function Todo({ todo }) {
             </span>
             <button
                 type="button"
-                className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline"
+                className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
                 onClick={() => deleteTodo(todo.id)}
             >
                 Delete

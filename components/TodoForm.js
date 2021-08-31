@@ -24,7 +24,7 @@ export default function TodoForm() {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            });
+        });
         setTimeout(() => {
             setIsPending(false);
         }, 1000);
@@ -34,7 +34,7 @@ export default function TodoForm() {
     return (
         <form className="form my-6" onSubmit={handleSubmit}>
             <div className="flex flex-col text-sm mb-2">
-                <label htmlFor="todo" className="font-bold mb-2 text-gray-800">Todo</label>
+                {/* <label htmlFor="todo" className="font-bold mb-2 text-gray-800">Todo</label> */}
                 <input
                     type="text"
                     name="todo"
@@ -43,11 +43,11 @@ export default function TodoForm() {
                     value={todo}
                     onChange={(e) => setTodo(e.target.value)}
                     placeholder="Learn About Logging In"
-                    className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-red-400"
+                    className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-[color:var(--brown)] font-secondary"
                 />
             </div>
-            {!isPending && <button type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black text-white py-2 px-4">Submit</button>}
-            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black text-white py-2 px-4">Submitting</button>}
+            {!isPending && <button type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black text-white py-2 px-4 font-secondary">Submit</button>}
+            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--lesserbrown)] bg-[color:var(--lesserbrown)] text-white py-2 px-4 font-secondary">Submitting</button>}
             <ToastContainer />
         </form>
     );
