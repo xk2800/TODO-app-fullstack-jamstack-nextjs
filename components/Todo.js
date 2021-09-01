@@ -38,13 +38,15 @@ export default function Todo({ todo }) {
         <>
             {!loading &&
                 <div className="bg-white flex items-center shadow-lg rounded-lg my-2 py-2 px-4 dark:bg-black dark:border">
-                    <input
-                        name="completed"
-                        type="checkbox"
-                        checked={todo.fields.completed}
-                        onChange={handleToggleCompleted}
-                        className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
-                    />
+                    <label htmlFor="checkbox">
+                        <input
+                            name="completed"
+                            type="checkbox"
+                            checked={todo.fields.completed}
+                            onChange={handleToggleCompleted}
+                            className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
+                        />
+                    </label>
                     <span
                         className={`flex-1 text-gray-800 px-[10px] rounded-[10px] whiteText ${todo.fields.completed ? 'line-through' : ''
                             }`}
@@ -66,14 +68,15 @@ export default function Todo({ todo }) {
                     {/* <span>Loading</span> */}
                     <Spinner />
                     <div className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px] dark:bg-black dark:border">
-                        <input
-                            name="completed"
-                            type="checkbox"
-                            checked={todo.fields.completed}
-                            onChange={handleToggleCompleted}
-                            className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
-                            disabled
-                        />
+                        <label htmlFor="checkbox">
+                            <input
+                                name="completed"
+                                type="checkbox"
+                                checked={todo.fields.completed}
+                                onChange={handleToggleCompleted}
+                                className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
+                            />
+                        </label>
                         <span
                             className={`flex-1 text-gray-800 ${todo.fields.completed ? 'line-through' : ''
                                 }`}
