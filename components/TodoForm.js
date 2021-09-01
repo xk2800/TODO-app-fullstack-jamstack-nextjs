@@ -17,17 +17,19 @@ export default function TodoForm() {
         addTodo(todo);
         setTodo('');
         setIsPending(true);
-        toast.success('Yay! New Todo Successfully Added', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+
+
         setTimeout(() => {
             setIsPending(false);
+            toast.success('Yay! New Todo Successfully Added', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
         }, 1000);
     };
 
@@ -44,11 +46,11 @@ export default function TodoForm() {
                     value={todo}
                     onChange={(e) => setTodo(e.target.value)}
                     placeholder="Need To Wash Car"
-                    className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-[color:var(--brown)] font-secondary"
+                    className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-[color:var(--brown)] font-secondary dark:bg-black dark:text-white dark:border-[2.5px]"
                 />
             </div>
             {!isPending && <button type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black dark:bg-[color:var(--lesserbrown)] dark:text-black dark:hover:bg-[color:var(--brown)] dark:hover:text-white text-white py-2 px-4 font-secondary">Submit</button>}
-            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--lesserbrown)] bg-[color:var(--lesserbrown)] text-white py-2 px-4 font-secondary dark:bg-[color:var(--evenlesserbrown)] dark:text-black">{/*Submitting*/}<Spinner className="w-1 h-1 mx-auto" /> </button>}
+            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--lesserbrown)] bg-[color:var(--lesserbrown)] text-white py-2 px-4 font-secondary dark:bg-[color:var(--evenlesserbrown)] dark:text-black cursor-wait">{/*Submitting*/}<Spinner className="mx-auto" /> </button>}
             <ToastContainer />
         </form>
     );

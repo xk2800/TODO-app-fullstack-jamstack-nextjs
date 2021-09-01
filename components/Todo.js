@@ -55,7 +55,7 @@ export default function Todo({ todo }) {
                     </span>
                     <button
                         type="button"
-                        className="text-sm bg-red-500 hover:bg-red-600 dark:hover:bg-red-400 dark:bg-red-600 dark:hover:text-black dark:text-white text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
+                        className="text-sm bg-red-500 hover:bg-red-600 dark:bg-red-400 dark:hover:bg-red-600 dark:text-black dark:hover:text-white text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
                         onClick={() => deleteTodo(todo.id)}
                     >
                         Delete
@@ -67,14 +67,15 @@ export default function Todo({ todo }) {
                 <>
                     {/* <span>Loading</span> */}
                     <Spinner />
-                    <div className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px] dark:bg-black dark:border">
+                    <div className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px] cursor-wait dark:bg-black dark:border">
                         <label htmlFor="checkbox">
                             <input
                                 name="completed"
                                 type="checkbox"
                                 checked={todo.fields.completed}
                                 onChange={handleToggleCompleted}
-                                className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
+                                disabled
+                                className="mr-2 form-checkbox h-5 w-5 cursor-wait"
                             />
                         </label>
                         <span
@@ -85,7 +86,8 @@ export default function Todo({ todo }) {
                         </span>
                         <button
                             type="button"
-                            className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
+                            disabled
+                            className="text-sm bg-red-500 text-white py-1 px-2 rounded font-secondary cursor-wait"
                             onClick={() => deleteTodo(todo.id)}
                         >
                             Delete
