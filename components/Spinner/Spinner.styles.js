@@ -4,9 +4,9 @@ export const Spinner = styled.div`
     border: 5px solid var(--lightGrey);
     border-top: 5px solid var(--darkGrey);
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
-    animation: spin 0.5s linear infinite;
+    width: 30px;
+    height: 30px;
+    animation: spin 0.1s linear infinite;
     /* margin: 0px auto; */
 
     @keyframes spin{

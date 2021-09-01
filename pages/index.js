@@ -36,8 +36,8 @@ export default function Home({ initialTodos }) {
                 )}
                 {session && (
                     <>
-                        <div className="text-center font-secondary">Welcome {session.user.name} <br /> Signed in as {session.user.email} <br /><br /></div>
-                        <h1 className='text-2xl text-center mb-4 font-main'>My Todo List</h1>
+                        <div className="text-center font-secondary whiteText">Welcome {session.user.name} <br /> Signed in as {session.user.email} <br /><br /></div>
+                        <h1 className='text-2xl text-center mb-4 font-main whiteText'>My Todo List</h1>
                         <TodoForm />
 
                         <ul>

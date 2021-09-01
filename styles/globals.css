@@ -6,8 +6,7 @@
 @tailwind utilities;
 
 :root {
-    --myred: #9b111a;
-    --mydarkred: #740c13;
+    
     --brown: #a89c94ff;
     --darkbrown: rgb(92, 86, 82);
     --lesserbrown: rgb(194, 187, 183);
@@ -15,6 +14,8 @@
     --lightGrey: #eee;
     --medGrey: #353535;
     --darkGrey: #1c1c1c;
+
+    --evenlesserbrown: rgb(240, 233, 229);
 }
 
 /* * {

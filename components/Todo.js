@@ -37,7 +37,7 @@ export default function Todo({ todo }) {
     return (
         <>
             {!loading &&
-                <li className="bg-white flex items-center shadow-lg rounded-lg my-2 py-2 px-4">
+                <li className="bg-white flex items-center shadow-lg rounded-lg my-2 py-2 px-4 dark:bg-black dark:border">
                     <input
                         name="completed"
                         type="checkbox"
@@ -46,14 +46,14 @@ export default function Todo({ todo }) {
                         className="mr-2 form-checkbox h-5 w-5 cursor-pointer"
                     />
                     <span
-                        className={`flex-1 text-gray-800 px-[10px] rounded-[10px]  ${todo.fields.completed ? 'line-through' : ''
+                        className={`flex-1 text-gray-800 px-[10px] rounded-[10px] whiteText ${todo.fields.completed ? 'line-through' : ''
                             }`}
                     >
                         {todo.fields.description}
                     </span>
                     <button
                         type="button"
-                        className="text-sm bg-red-500 hover:bg-red-600 text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
+                        className="text-sm bg-red-500 hover:bg-red-600 dark:hover:bg-red-400 dark:bg-red-600 dark:hover:text-black dark:text-white text-white py-1 px-2 rounded focus:outline-none focus:shadow-outline font-secondary"
                         onClick={() => deleteTodo(todo.id)}
                     >
                         Delete
@@ -65,7 +65,7 @@ export default function Todo({ todo }) {
                 <>
                     {/* <span>Loading</span> */}
                     <Spinner />
-                    <li className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px]">
+                    <li className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px] dark:bg-black dark:border">
                         <input
                             name="completed"
                             type="checkbox"

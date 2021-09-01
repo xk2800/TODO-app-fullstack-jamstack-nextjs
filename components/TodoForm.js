@@ -1,6 +1,7 @@
 import { useState, useContext } from "react";
 import { TodosContext } from "../context/TodosContext";
 import { ToastContainer, toast } from 'react-toastify';
+import Spinner from './Spinner/index';
 
 import 'react-toastify/dist/ReactToastify.min.css';
 
@@ -46,8 +47,8 @@ export default function TodoForm() {
                     className="border border-gray-200 p-2 rounded-lg appearance-none focus:outline-none focus:border-[color:var(--brown)] font-secondary"
                 />
             </div>
-            {!isPending && <button type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black text-white py-2 px-4 font-secondary">Submit</button>}
-            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--lesserbrown)] bg-[color:var(--lesserbrown)] text-white py-2 px-4 font-secondary">Submitting</button>}
+            {!isPending && <button type="submit" className="w-full rounded-[5px] border-[color:var(--darkbrown)] bg-[color:var(--darkbrown)] hover:bg-[color:var(--brown)] hover:border-[color:var(--brown)] hover:text-black dark:bg-[color:var(--lesserbrown)] dark:text-black dark:hover:bg-[color:var(--brown)] dark:hover:text-white text-white py-2 px-4 font-secondary">Submit</button>}
+            {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--lesserbrown)] bg-[color:var(--lesserbrown)] text-white py-2 px-4 font-secondary dark:bg-[color:var(--evenlesserbrown)] dark:text-black">{/*Submitting*/}<Spinner className="w-1 h-1 mx-auto" /> </button>}
             <ToastContainer />
         </form>
     );
