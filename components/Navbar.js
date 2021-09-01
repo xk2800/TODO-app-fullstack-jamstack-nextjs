@@ -7,7 +7,7 @@ export default function Navbar() {
 
     return (
         <nav className="flex justify-between items-center py-4 dark:bg-black">
-            <p className="text-2xl font-bold text-[color:var(--darkbrown)] dark:text-[color:var(--lesserbrown)]">My Todos</p>
+            <p className="text-2xl font-bold text-[color:var(--darkbrown)] dark:text-[color:var(--lesserbrown)]">Simple To-do's</p>
             <div className="flex items-center ">
                 <DarkmodeToggler />
                 {/* <Link href='/api/logout'>

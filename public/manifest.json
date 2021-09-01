@@ -1,6 +1,6 @@
 {
-    "name": "The Todo Site",
-    "short_name": "Todo Site",
+    "name": "Simple To-do's",
+    "short_name": "Simple To-do's",
     "icons": [
         {
             "src": "/icon.png",
