@@ -3,7 +3,6 @@ import { Provider } from "next-auth/client";
 import { TodosProvider } from '../context/TodosContext';
 import Container from '../components/Container';
 import TodoFooter from '../components/Footer';
-import DarkmodeToggler from '../components/DarkmodeToggler';
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -12,8 +11,7 @@ function MyApp({ Component, pageProps }) {
         <div className="dark:bg-black">
           <Container>
             <Component {...pageProps} />
-            <DarkmodeToggler />
-            <TodoFooter />
+            {/* <TodoFooter /> */}
           </Container>
         </div>
       </TodosProvider>

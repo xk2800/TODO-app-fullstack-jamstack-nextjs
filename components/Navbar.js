@@ -1,5 +1,5 @@
 import { signIn, signOut, useSession } from "next-auth/client";
-//import useDarkMode from "../useDarkMode";
+import DarkmodeToggler from '../components/DarkmodeToggler';
 
 export default function Navbar() {
     const [session, loading] = useSession();
@@ -8,7 +8,8 @@ export default function Navbar() {
     return (
         <nav className="flex justify-between items-center py-4 dark:bg-black">
             <p className="text-2xl font-bold text-[color:var(--darkbrown)]">My Todos</p>
-            <div className="flex">
+            <div className="flex items-center">
+                <DarkmodeToggler />
                 {/* <Link href='/api/logout'>
                     <a className="rounded bg-blue-500 hover:bg-blue-700 text-white py-2 px-4">Logout</a>
                 </Link> */}
