@@ -11,7 +11,7 @@ function MyApp({ Component, pageProps }) {
         <div className="dark:bg-black">
           <Container>
             <Component {...pageProps} />
-            {/* <TodoFooter /> */}
+            <TodoFooter />
           </Container>
         </div>
       </TodosProvider>
