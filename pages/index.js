@@ -26,6 +26,7 @@ export default function Home({ initialTodos }) {
             <Head>
                 <title>Todo App</title>
                 <link rel="icon" href="/favicon.ico" />
+                <meta name="description" content="The Todo Site, Fruits of Xavier K." />
             </Head>
             <Navbar className="dark:bg-black" />
             <main className="dark:bg-black">
