@@ -41,13 +41,13 @@ export default function Home({ initialTodos }) {
                         <h1 className='text-2xl text-center mb-4 font-main whiteText'>My Todo List</h1>
                         <TodoForm />
 
-                        <ul>
+                        <div>
                             {todos &&
                                 todos.map(todo =>
                                     <Todo key={todo.id} todo={todo} />
                                 )
                             }
-                        </ul>
+                        </div>
                     </>
                 )}
 
