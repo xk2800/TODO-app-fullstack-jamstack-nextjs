@@ -2,28 +2,33 @@ import { useState, useContext } from "react";
 import { TodosContext } from "../context/TodosContext";
 import { ToastContainer, toast } from 'react-toastify';
 import Spinner from './Spinner/index';
+import SkeletonCard from '../components/SkeletonLoader';
 
 import 'react-toastify/dist/ReactToastify.min.css';
 
 export default function TodoForm() {
 
     const [todo, setTodo] = useState('');
-    const { addTodo } = useContext(TodosContext);
+    const [loading, setLoading] = useState(false);
 
     const [isPending, setIsPending] = useState(false);
+
+    const { addTodo } = useContext(TodosContext);
 
     const handleSubmit = (e) => {
         e.preventDefault();
         addTodo(todo);
         setTodo('');
         setIsPending(true);
+        setLoading(true);
 
 
         setTimeout(() => {
             setIsPending(false);
+            setLoading(false);
             toast.success('Yay! New Todo Successfully Added', {
                 position: "top-center",
-                autoClose: 3000,
+                autoClose: 2500,
                 hideProgressBar: false,
                 closeOnClick: true,
                 pauseOnHover: true,
@@ -35,6 +40,7 @@ export default function TodoForm() {
 
 
     return (
+        <>
         <form className="form my-6" onSubmit={handleSubmit}>
             <div className="flex flex-col text-sm mb-2">
                 {/* <label htmlFor="todo" className="font-bold mb-2 text-gray-800">Todo</label> */}
@@ -53,5 +59,7 @@ export default function TodoForm() {
             {isPending && <button disabled type="submit" className="w-full rounded-[5px] border-[color:var(--lesserbrown)] bg-[color:var(--lesserbrown)] text-white py-2 px-4 font-secondary dark:bg-[color:var(--evenlesserbrown)] dark:text-black cursor-wait">{/*Submitting*/}<Spinner className="mx-auto" /> </button>}
             <ToastContainer />
         </form>
+        {loading && <SkeletonCard />}
+        </>
     );
 }
