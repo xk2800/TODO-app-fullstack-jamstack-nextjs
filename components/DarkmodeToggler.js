@@ -5,7 +5,7 @@ export default function DarkmodeToggler() {
 
     return (
         <div>
-            <button className="dark:text-white">
+            <button name="darkModeTrigger" className="dark:text-white">
                 {colorTheme === "light" ? (
                     <svg
                         onClick={() => setTheme("light")}

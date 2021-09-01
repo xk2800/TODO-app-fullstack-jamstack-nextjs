@@ -37,7 +37,7 @@ export default function Todo({ todo }) {
     return (
         <>
             {!loading &&
-                <li className="bg-white flex items-center shadow-lg rounded-lg my-2 py-2 px-4 dark:bg-black dark:border">
+                <div className="bg-white flex items-center shadow-lg rounded-lg my-2 py-2 px-4 dark:bg-black dark:border">
                     <input
                         name="completed"
                         type="checkbox"
@@ -58,14 +58,14 @@ export default function Todo({ todo }) {
                     >
                         Delete
                     </button>
-                </li>
+                </div>
             }
 
             {loading &&
                 <>
                     {/* <span>Loading</span> */}
                     <Spinner />
-                    <li className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px] dark:bg-black dark:border">
+                    <div className=" flex items-center shadow-lg rounded-lg my-2 py-2 px-4 blur-[1px] dark:bg-black dark:border">
                         <input
                             name="completed"
                             type="checkbox"
@@ -87,7 +87,7 @@ export default function Todo({ todo }) {
                         >
                             Delete
                         </button>
-                    </li>
+                    </div>
                 </>
             }
             <ToastContainer />
