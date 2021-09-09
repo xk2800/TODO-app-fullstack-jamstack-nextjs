@@ -29,7 +29,7 @@ export default function Home({ initialTodos }) {
                 <meta name="description" content="The Todo Site, Fruits of Xavier K." />
             </Head>
             <Navbar className="dark:bg-black" />
-            <main className="dark:bg-black">
+            <main className="dark:bg-black whiteText">
                 {!session && (
                     <>
                         <h1 className="text-2xl"><button onClick={() => signIn()} className="underline">Login</button> to see your Todos</h1>
