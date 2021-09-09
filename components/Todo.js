@@ -19,16 +19,17 @@ export default function Todo({ todo }) {
         const updatedTodo = { id: todo.id, fields: updatedFields };
         updateTodo(updatedTodo);
         setLoading(true);
-        toast.success('Yay! Todo Successfully Updated', {
-            position: "top-center",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-        });
+
         setTimeout(() => {
+            toast.success('Yay! Todo Successfully Updated', {
+                position: "top-center",
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+            });
             setLoading(false);
         }, 2000);
 

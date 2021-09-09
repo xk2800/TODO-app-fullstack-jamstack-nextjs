@@ -27,7 +27,7 @@ export default function SignIn({ providers, csrfToken }) {
                     );
                 })}
                 {/* </button> */}
-                <Link href="/"><button className="rounded-[10px] border-[2px] px-[75px] py-[20px]">Test</button></Link>
+                <Link href="/"><button className="rounded-[10px] border-[2px] px-[75px] py-[20px]">Cancel</button></Link>
             </div>
         </>
     );
