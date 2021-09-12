@@ -22,7 +22,7 @@ export default function Home({ initialTodos }) {
 
     console.log(initialTodos);
     return (
-        <div className="dark:bg-black">
+        <div className="">
             <Head>
                 <title>Simple To-do's</title>
                 <link rel="icon" href="/favicon.ico" />
